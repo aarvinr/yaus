@@ -1,0 +1,17 @@
+name: Prettier
+on: [push, pull_request]
+
+jobs:
+  prettier:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: pnpm/action-setup@v4.1.0
+        with:
+          run_install: true
+      - uses: actions/setup-node@v4.2.0
+        with:
+          node-version-file: package.json
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - run: pnpm prettier --check .
