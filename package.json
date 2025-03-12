@@ -1,4 +1,10 @@
 {
+	"dependencies": {
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"react-server-dom-webpack": "^19.0.0",
+		"waku": "^0.21.23"
+	},
 	"devDependencies": {
 		"prettier": "3.5.3"
 	},
@@ -7,8 +13,18 @@
 		"pnpm": ">=10"
 	},
 	"packageManager": "pnpm@10.6.2",
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@swc/core",
+			"esbuild"
+		]
+	},
 	"prettier": {
 		"endOfLine": "crlf",
 		"useTabs": true
-	}
+	},
+	"scripts": {
+		"dev": "waku dev"
+	},
+	"type": "module"
 }
